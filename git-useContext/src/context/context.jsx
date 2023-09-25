@@ -1,16 +1,16 @@
-import { Children, createContext, useState } from "react";
+import { createContext, useState } from "react";
 
-const test = createContext({})
+const MainContext = createContext()
 
 
 export function MainProvider({children})
 {
-    const [c, setC] = useState(true)
+    const [frog, setFrog] = useState("fish")
     return(
-        <test.Provider value={{c}}>
+        <MainContext.Provider value={{frog, setFrog}}>
             {children}
-        </test.Provider>
+        </MainContext.Provider>
     )
 }
 
-export default test;
+export default MainContext;
